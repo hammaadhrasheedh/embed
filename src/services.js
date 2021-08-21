@@ -169,7 +169,7 @@ export default {
   },
   padlet: {
     regex: /(?:http[s]?:\/\/)?padlet\.com\/embed\/([^\/\?\&]+)\/?/,
-    embedUrl: 'https://padlet.com/embed/<%= remote_id %>/vt/frame',
+    embedUrl: 'https://padlet.com/embed/<%= remote_id %>',
     html: '<iframe width="600" height="300" style="margin: 0 auto;" frameborder="0" scrolling="no" allowtransparency="true"></iframe>',
     height: 300,
     width: 600,
