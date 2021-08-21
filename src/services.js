@@ -160,4 +160,18 @@ export default {
     height: 300,
     width: 600,
   },
+  typeform: {
+    regex: /^((?:http[s]?:\/\/)?(?:www.)?(.*)\.typeform\.com\/to\/(.*))$/,
+    embedUrl: '<%= remote_id %>?typeform-embed=oembed&format=json',
+    html: '<iframe width="600" height="700" style="margin: 0 auto;" frameborder="0" allowtransparency="true" allowfullscreen sandbox="allow-scripts allow-popups allow-top-navigation-by-user-activation allow-forms allow-same-origin"></iframe>',
+    height: 700,
+    width: 600,
+  },
+  padlet: {
+    regex: /(?:http[s]?:\/\/)?padlet\.com\/embed\/([^\/\?\&]+)\/?/,
+    embedUrl: 'https://padlet.com/embed/<%= remote_id %>/vt/frame',
+    html: '<iframe width="600" height="300" style="margin: 0 auto;" frameborder="0" scrolling="no" allowtransparency="true"></iframe>',
+    height: 300,
+    width: 600,
+  },
 };

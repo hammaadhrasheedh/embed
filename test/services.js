@@ -387,5 +387,27 @@ describe('Services Regexps', () => {
       expect(embed.data.source).to.be.equal(url.source);
     });
   });
+  it('Typeform', async () => {
+    const service = 'typeform';
+
+    const urls = [
+      {
+        source: 'https://andreyblinoff.typeform.com/to/jId62Uli',
+        embed: 'https://andreyblinoff.typeform.com/to/jId62Uli?typeform-embed=oembed&format=json'
+      },
+    ];
+
+    urls.forEach(url => {
+      expect(patterns[service].test(url.source)).to.be.true;
+
+      const event = composePasteEventMock('pattern', service, url.source);
+
+      embed.onPaste(event);
+
+      expect(embed.data.service).to.be.equal(service);
+      expect(embed.data.embed).to.be.equal(url.embed);
+      expect(embed.data.source).to.be.equal(url.source);
+    });
+  });
 
 });
